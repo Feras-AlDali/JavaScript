@@ -405,3 +405,233 @@ img:hover {
 .CodeLink a:hover {
   color: #0056b3; /* Darker blue on hover */
 }
+
+
+/***** Contact Form Styles *****/
+.ContactPopupButton {
+  /* Renamed class */
+  position: fixed;
+  bottom: 20px; /* Fixed positioning */
+  right: 20px;
+  width: auto; /* Auto width based on content */
+  padding: 12px 20px; /* Adjust padding */
+  background-color: #007bff; /* Blue button */
+  color: white;
+  border: none; /* No border */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2vw; /* Adjust size */
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 99; /* Ensure button is above most content */
+  animation: popUpButtonAnimation 1s ease-out 1s backwards; /* Renamed animation, added delay */
+}
+.ContactPopupButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Renamed animation */
+@keyframes popUpButtonAnimation {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ModalForm {
+  /* Renamed class */
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border: 1px solid #ccc;
+  z-index: 101; /* Above navbar */
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  max-width: 450px; /* Limit form width */
+  width: 90%; /* Responsive width */
+  animation: slideUpForm 0.5s ease-out; /* Animation for form appearance */
+}
+
+@keyframes slideUpForm {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 10px;
+    opacity: 1;
+  }
+}
+
+.ModalContent {
+  /* Renamed class */
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px; /* Match container */
+}
+.ModalContent h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2vw; /* Adjust heading size */
+  color: #333;
+}
+
+/* Form input fields and textarea */
+.ModalContent input[type="text"],
+.ModalContent input[type="tel"], /* Added tel type */
+.ModalContent input[type="email"], /* Added email type */
+.ModalContent textarea {
+  /* Added textarea */
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 15px 0; /* Adjusted margin */
+  display: inline-block;
+  border: 1px solid #ccc;
+  background: #f8f9fa; /* Light background */
+  box-sizing: border-box;
+  font-size: 1rem; /* Use rem for accessibility */
+  border-radius: 4px;
+}
+.ModalContent textarea {
+  resize: vertical; /* Allow vertical resize */
+  min-height: 80px; /* Minimum height */
+}
+
+/* Form labels */
+.ModalContent label {
+  font-weight: bold;
+  font-size: 0.9rem; /* Use rem */
+  color: #555;
+}
+
+.ModalContent button {
+  /* General button style within modal */
+  font-family: "Roboto", sans-serif; /* Consistent button font */
+  letter-spacing: 0.1vw;
+  font-size: 1rem; /* Use rem */
+  font-weight: bold;
+  padding: 12px 18px; /* Adjust padding */
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  border: none; /* Remove border by default */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.ModalContent button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.SubmitButton {
+  /* Renamed class */
+  background-color: #28a745; /* Green submit */
+  color: white;
+  margin-bottom: 10px;
+}
+.SubmitButton:hover {
+  background-color: #218838; /* Darker green */
+}
+
+.CloseButton {
+  /* Renamed class */
+  background-color: #dc3545; /* Red close */
+  color: white;
+}
+.CloseButton:hover {
+  background-color: #c82333; /* Darker red */
+}
+/***** End Contact Form Styles *****/
+
+/***** Media Queries for Responsiveness *****/
+
+/* Adjust column layout for smaller screens */
+@media screen and (max-width: 768px) {
+  .InfoColumn {
+    flex: 100%; /* Stack columns */
+    height: auto; /* Auto height */
+    min-width: unset; /* Remove min-width */
+  }
+  .ImageColumn {
+    order: -1; /* Display image above text on mobile */
+    padding: 5%;
+  }
+  .TextColumn h1,
+  .TextColumn p {
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .SlideshowWrapper {
+    max-width: 85vw; /* Wider slideshow on mobile */
+  }
+  .caption {
+    font-size: 1.8vw; /* Adjust caption size */
+  }
+
+  .HeaderNavigation .nav-link {
+    font-size: 2vw; /* Adjust nav font size */
+    padding: 12px 10px;
+  }
+  .HeroTextContainer p {
+    font-size: 2.5vw; /* Adjust hero text size */
+  }
+  p {
+    /* General paragraph adjustment */
+    font-size: 2.8vw;
+  }
+  .ContactPopupButton {
+    font-size: 1.8vw;
+    padding: 10px 15px;
+  }
+  .ModalForm {
+    max-width: 90%;
+  }
+  .ModalContent h1 {
+    font-size: 3vw;
+  }
+  .ModalContent label {
+    font-size: 1.2rem;
+  }
+  .ModalContent button {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .HeaderNavigation .nav-link {
+    font-size: 2.5vw; /* Larger nav font on very small screens */
+    float: none; /* Stack nav links */
+    text-align: center;
+  }
+  .HeroTextContainer h1 {
+    font-size: 5vw;
+  }
+  .HeroTextContainer p {
+    font-size: 3.5vw;
+  }
+  p {
+    font-size: 4vw;
+  }
+
+  .ContactPopupButton {
+    width: auto; /* Let button size naturally */
+    font-size: 2.5vw;
+    padding: 8px 12px;
+  }
+  .ModalContent h1 {
+    font-size: 4vw;
+  }
+  .ModalContent label {
+    font-size: 1rem;
+  } /* Adjust label */
+  .ModalContent button {
+    font-size: 1rem;
+  } /* Adjust button */
+}
+
+
