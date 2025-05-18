@@ -1,0 +1,407 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  opacity: 0; /* Start faded out */
+  transition: opacity 1.5s ease-in; /* Faster fade-in */
+  letter-spacing: 0.15vw;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+  font-size: 1.4vw; /* Slightly smaller base font size */
+  overflow-x: hidden;
+  user-select: none; /* Keep text unselectable */
+  background-color: #f4f4f4; /* Light background for body */
+}
+
+/* Fade-in effect */
+body.fade-in {
+  opacity: 1;
+}
+
+h1,
+h2,
+h3 {
+  /* Apply common styles to headings */
+  font-family: "Montserrat", sans-serif; /* Consistent modern heading font */
+  text-align: center;
+  color: #333; /* Darker heading color */
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-top: 2.5%;
+  font-size: 2.5vw; /* Adjusted H1 size */
+}
+
+h2 {
+  /* Style for new section headings */
+  margin-top: 2%;
+  margin-bottom: 1%;
+  font-size: 2vw;
+  color: #444;
+}
+
+/* Heading hover effect */
+h1:hover,
+h2:hover {
+  color: #007bff; /* Change color on hover */
+  transform: scale(1.05);
+  transition: transform 0.5s, color 0.5s;
+}
+
+.light-text {
+  /* Renamed class */
+  color: #f8f9fa; /* Light color for text over dark backgrounds */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add text shadow */
+}
+
+p {
+  font-family: "Lato", sans-serif; /* Readable paragraph font */
+  text-align: justify;
+  letter-spacing: 0.08vw;
+  font-size: 1.6vw; /* Adjusted paragraph size */
+  line-height: 1.6; /* Improve readability */
+  padding: 0 1.5vw; /* Adjusted padding */
+  color: #555; /* Standard text color */
+}
+
+p:hover {
+  transition: transform 0.8s;
+  transform: scale(1.005); /* Subtle hover effect */
+}
+
+.centered-text {
+  /* Renamed class */
+  text-align: center;
+}
+
+.centered-text:hover {
+  transition: transform 1.5s;
+  transform: scale(1.05);
+}
+
+a {
+  color: #0056b3; /* Standard link color */
+  cursor: pointer;
+  text-decoration: none; /* Remove underline by default */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+  color: #003d80; /* Darker link color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+q {
+  font-style: italic;
+}
+
+img {
+  filter: none; /* Remove default grayscale */
+  border-radius: 6px; /* Slightly smaller radius */
+  max-width: 100%;
+  height: auto; /* Ensure aspect ratio is maintained */
+  display: block;
+  margin: auto;
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition */
+}
+
+img:hover {
+  transform: scale(1.03); /* Slightly enlarge image on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.SiteFooter {
+  /* Renamed class */
+  padding: 1.5% 1%; /* Adjusted padding */
+  background-color: #000; /* Dark footer background */
+  color: #f8f9fa; /* Light text color */
+  text-align: center; /* Center footer text */
+  font-size: 1.2vw; /* Smaller footer font */
+}
+.SiteFooter p {
+  text-align: center; /* Ensure paragraph inside is centered */
+  color: #adb5bd; /* Lighter grey for footer text */
+}
+.SiteFooter a {
+  color: #6ffea8; /* Light blue links in footer */
+}
+.SiteFooter a:hover {
+  color: #99ddff; /* Lighter blue on hover */
+}
+/***** End Global Styles *****/
+
+/***** Navigation Styles *****/
+.HeaderNavigation {
+  /* Renamed class */
+  overflow: hidden;
+  background-color: #000; /* Darker navbar */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100; /* High z-index */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow to navbar */
+  animation: slideInHeader 1s ease-out; /* Renamed animation */
+}
+
+/* Renamed animation */
+@keyframes slideInHeader {
+  from {
+    top: -60px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.HeaderNavigation .nav-link {
+  /* Renamed class */
+  float: left;
+  display: block;
+  color: #dee2e6; /* Lighter grey navbar text */
+  padding: 14px 18px; /* Adjusted padding */
+  text-decoration: none;
+  font-family: "Roboto Condensed", sans-serif; /* Different nav font */
+  font-size: 1.4vw;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.HeaderNavigation .nav-link:hover,
+.HeaderNavigation .nav-link.contact-trigger:hover {
+  /* Target contact trigger specifically if needed */
+  background-color: #495057; /* Grey background on hover */
+  color: #ffffff; /* White text on hover */
+}
+
+.HeaderNavigation .nav-link.active {
+  background-color: #007bff; /* Blue for active link */
+  color: white;
+}
+/***** End Navigation Styles *****/
+
+/***** Hero Section (Video) Styles *****/
+#BgVideoPlayer {
+  /* Renamed ID */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%; /* Ensure full coverage */
+  z-index: -10; /* Ensure it's behind everything */
+  object-fit: cover; /* Cover the area */
+}
+
+.HeroTextContainer {
+  /* Renamed class */
+  /* Semi-transparent overlay */
+  background: linear-gradient(rgba(50, 10, 200, 0.4), rgba(0, 0, 200, 0.7));
+  color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Ensure text inside is centered */
+  position: relative; /* Needed for potential absolute children */
+  animation: revealHeroContent 1.5s ease-in-out; /* Renamed animation */
+  padding: 2vw; /* Add some padding */
+  box-sizing: border-box; /* Include padding in height */
+}
+.HeroTextContainer h1 {
+  color: #fff; /* Ensure heading is white */
+  margin-bottom: 15px; /* Space below heading */
+}
+.HeroTextContainer p {
+  color: #e0e0e0; /* Slightly off-white for paragraphs */
+  max-width: 800px; /* Limit width of paragraph */
+  text-align: center; /* Center paragraph text */
+  font-size: 1.8vw; /* Adjust size */
+}
+
+/* Renamed animation */
+@keyframes revealHeroContent {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/***** End Hero Section Styles *****/
+
+/***** Showcase (Slideshow) Styles *****/
+.GalleryBackground {
+  /* Renamed class */
+  background: rgba(
+    248,
+    249,
+    250,
+    0.85
+  ); /* Lighter, less transparent background */
+  padding: 3% 0; /* Add vertical padding */
+}
+
+.SlideshowWrapper {
+  /* Renamed class */
+  max-width: 55vw; /* Adjust max width */
+  position: relative;
+  margin: auto;
+  border: 1px solid #ccc; /* Add a light border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  background-color: #fff; /* White background for the wrapper */
+}
+
+.SlideItem {
+  /* Renamed class */
+  display: none; /* Hide slides by default */
+}
+
+.GalleryImage {
+  /* Renamed class */
+  vertical-align: middle;
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  /* Remove default image border-radius if wrapper has one */
+  border-radius: 0;
+  /* Remove default image box-shadow if wrapper has one */
+  box-shadow: none;
+}
+
+.PrevButton, /* Renamed class */
+.NextButton {
+  /* Renamed class */
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px; /* Fixed padding */
+  margin-top: -22px; /* Adjust vertical position */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+  font-weight: bold;
+  font-size: 20px; /* Fixed font size */
+  transition: background-color 0.4s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.NextButton {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.PrevButton:hover,
+.NextButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.caption {
+  /* Renamed class */
+  color: #f2f2f2;
+  font-size: 1.3vw; /* Adjusted size */
+  padding: 10px 12px; /* Adjusted padding */
+  position: absolute;
+  bottom: 8px; /* Position slightly up from bottom */
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-sizing: border-box; /* Include padding in width */
+  font-weight: normal; /* Normal weight */
+  border-radius: 0; /* Remove radius if wrapper has one */
+}
+.caption a {
+  color: #87cefa; /* Light Sky Blue for links in caption */
+}
+.caption a:hover {
+  color: #add8e6; /* Lighter blue on hover */
+}
+
+.IndicatorDot {
+  /* Renamed class */
+  cursor: pointer;
+  height: 12px; /* Fixed size */
+  width: 12px;
+  margin: 0 4px; /* Adjusted margin */
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+  z-index: 10; /* Ensure dots are clickable */
+}
+
+.active, /* Keep active class */
+.IndicatorDot:hover {
+  background-color: #555; /* Darker grey for active/hover */
+}
+
+/* Renamed animation */
+.fade-effect {
+  animation-name: fadeInAnimation;
+  animation-duration: 1.2s;
+}
+
+@keyframes fadeInAnimation {
+  /* Renamed animation */
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/***** End Showcase Styles *****/
+
+/***** Content Row (About/GitHub) Styles *****/
+.ContentRow {
+  /* Renamed class */
+  display: flex; /* Use flexbox for columns */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  width: 100%;
+  background-color: #ffffff; /* White background for content rows */
+  margin-bottom: 1px; /* Small separation */
+}
+
+.InfoColumn {
+  /* Renamed class */
+  flex: 1; /* Allow columns to grow equally */
+  min-width: 300px; /* Minimum width before wrapping */
+  padding: 2.5%; /* Adjusted padding */
+  box-sizing: border-box;
+}
+
+.TextColumn {
+  /* Renamed class */
+  background-color: #ffffff; /* Ensure white background */
+  display: flex; /* Center content */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.InfoColumn h2 {
+  margin-bottom: 1.2rem; /* Add space between heading and content */
+  font-size: 2vw;
+}
+
+.CodeLink {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.CodeLink a {
+  font-size: 1.2vw;
+  color: #007bff;
+}
+
+.CodeLink a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
