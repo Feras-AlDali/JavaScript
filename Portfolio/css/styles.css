@@ -415,7 +415,7 @@ img:hover {
   right: 20px;
   width: auto; /* Auto width based on content */
   padding: 12px 20px; /* Adjust padding */
-  background-color: #007bff; /* Blue button */
+  background-color: #BB7bff; 
   color: white;
   border: none; /* No border */
   border-radius: 5px;
@@ -427,7 +427,7 @@ img:hover {
   animation: popUpButtonAnimation 1s ease-out 1s backwards; /* Renamed animation, added delay */
 }
 .ContactPopupButton:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #BB56b3; 
 }
 
 /* Renamed animation */
@@ -451,6 +451,7 @@ img:hover {
   border: 1px solid #ccc;
   z-index: 101; /* Above navbar */
   background-color: #fff;
+  opacity:70%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   max-width: 450px; /* Limit form width */
